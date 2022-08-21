@@ -17,7 +17,7 @@ namespace BlogApp.Backend.Implementation
         public bool Delete(T entity)
         {
             _ = _context.Set<T>().Remove(entity);
-            return  _context.SaveChanges() == 1;
+            return  _context.SaveChanges() > 0;
         }
 
         public IQueryable<T> GetAll()
@@ -33,20 +33,20 @@ namespace BlogApp.Backend.Implementation
         public bool Insert(T entity)
         {
             _ = _context.Set<T>().AddAsync(entity);
-            return _context.SaveChanges() == 1;
+            return _context.SaveChanges() > 0;
         }
 
         public bool Update(T entity)
         {
             _ = _context.Set<T>().Update(entity);
-            return _context.SaveChanges() == 1;
+            return _context.SaveChanges() > 0;
         }
 
         public bool Delete(long id)
         {
             T entity = _context.Set<T>().Find(id);
             _context.Set<T>().Remove(entity);
-            return _context.SaveChanges() == 1;
+            return _context.SaveChanges() > 0;
         }
     }
 }

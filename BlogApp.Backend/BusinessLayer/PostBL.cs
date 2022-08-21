@@ -2,6 +2,7 @@
 using BlogApp.Common.Model.API;
 using BlogApp.Common.Model.Blog;
 using BlogApp.Common.Model.Security;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,7 +21,11 @@ namespace BlogApp.Backend.BusinessLayer
 
         public IEnumerable<Post> GetPublished()
         {
-            return _postRepository.GetAll().Where(p => p.Status == PostStatus.APPROVED).ToList();
+            return _postRepository.GetAll()                
+                .Where(p => p.Status == PostStatus.APPROVED)
+                .Include(p => p.Comments)
+                .Include(p => p.Author)
+                .ToList();
         }
 
         public bool CreateComment(long postId, string userId, Comment comment)
@@ -30,6 +35,10 @@ namespace BlogApp.Backend.BusinessLayer
             if (post != null && post.Status == PostStatus.APPROVED && user != null)
             {
                 comment.Author = user;
+                if(post.Comments is null)
+                {
+                    post.Comments = new List<Comment>();
+                }
                 post.Comments.Add(comment);
                 return _postRepository.Update(post);
             }
@@ -41,7 +50,11 @@ namespace BlogApp.Backend.BusinessLayer
             User user = GetUser(userId);
             if (user != null)
             {
-                return _postRepository.GetAll().Where(p => p.Author == user).ToList();
+                return _postRepository.GetAll()
+                    .Where(p => p.Author == user)
+                    .Include(p => p.Comments)
+                    .Include(p => p.Author)
+                    .ToList();
             }
             return null;
         }
