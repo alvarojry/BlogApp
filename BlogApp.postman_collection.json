@@ -162,8 +162,17 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"New comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/api/post/1002/comment",
+					"raw": "http://localhost:5000/api/post/1/comment",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -172,7 +181,7 @@
 					"path": [
 						"api",
 						"post",
-						"1002",
+						"1",
 						"comment"
 					]
 				}
@@ -244,7 +253,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/post/10004",
+					"raw": "http://localhost:5000/api/post/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -253,7 +262,7 @@
 					"path": [
 						"api",
 						"post",
-						"10004"
+						"1"
 					]
 				}
 			},
@@ -265,7 +274,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/post/10004/submit",
+					"raw": "http://localhost:5000/api/post/1/submit",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -274,7 +283,7 @@
 					"path": [
 						"api",
 						"post",
-						"10004",
+						"1",
 						"submit"
 					]
 				}
@@ -308,7 +317,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/post/10004/approve",
+					"raw": "http://localhost:5000/api/post/1/approve",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -317,7 +326,7 @@
 					"path": [
 						"api",
 						"post",
-						"10004",
+						"1",
 						"approve"
 					]
 				}
@@ -361,7 +370,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RUb2tlbiIsImp0aSI6ImZiMWRjYWVhLWQ0NmYtNDFmMi1hYTE1LTk0N2EwY2JmOGYwYiIsImlhdCI6IjIxLzgvMjAyMiAxMDoxMjo1MCBQTSIsIlVzZXJJZCI6IjEwMDAzIiwiVXNlck5hbWUiOiJhZnVlbnRlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiRURJVE9SIiwiZXhwIjoxNjYxMTIwNTcwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.LArrrxKkgvYdYS0PdB1nEwOWPHeQ6dWNq2V1ywMDFLg",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RUb2tlbiIsImp0aSI6IjhiNjcwMzc2LTVmOTktNDdmMC1iZjVmLWMwNjVmZmQ2ODU5ZSIsImlhdCI6IjIxLzgvMjAyMiAxMToxNToyMiBQTSIsIlVzZXJJZCI6IjMiLCJVc2VyTmFtZSI6InBzYW5jaGV6IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiV1JJVEVSIiwiZXhwIjoxNjYxMTI0MzIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMDAifQ.xjAiiAj50mpY1TTN60vRhwWqbZ6R3A4SNMwt8RxxVj0",
 				"type": "string"
 			}
 		]
