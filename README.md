@@ -1,4 +1,4 @@
-# BlogApp-Backend
+# BlogApp
 
 Build a minimal Blog Engine / CMS backend API, that allows to create, edit and publish text-
 based posts, with an approval flow where three different user types may interact.
